@@ -1,0 +1,26 @@
+{
+  "name": "posko-desktop",
+  "version": "0.0.1",
+  "description": "POSko on Desktop",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neume/posko-electron.git"
+  },
+  "keywords": [
+    "posko"
+  ],
+  "author": "Joseph Nelson Valeros",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neume/posko-electron/issues"
+  },
+  "homepage": "https://github.com/neume/posko-electron#readme",
+  "dependencies": {
+    "electron": "^3.0.2"
+  }
+}

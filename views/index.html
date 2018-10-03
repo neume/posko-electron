@@ -19,7 +19,16 @@
       password: password
     })
     .then(function(response) {
-      console.log(response);
+      console.log(response)
+      axios.get('http://localhost:3000/api/v1/products.json', {
+        auth: {
+          username: response.data.user.token,
+          password: response.data.user.auth_token
+        }
+      })
+      .then(function(response) {
+        console.log(response)
+      })
     })
   </script>
 </body>

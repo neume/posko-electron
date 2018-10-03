@@ -5,5 +5,22 @@
 </head>
 <body>
   Greetings!
+
+  <script>
+    const axios = require('axios');
+    var account_name = 'first_company';
+    var email = 'admin@first_company.com';
+    var password = 'pass';
+    var params = `account_name=${account_name}&email=${email}&password=${password}`
+
+    axios.post('http://localhost:3000/api/v1/sign_in.json', {
+      account_name: account_name,
+      email: email,
+      password: password
+    })
+    .then(function(response) {
+      console.log(response);
+    })
+  </script>
 </body>
 </html>

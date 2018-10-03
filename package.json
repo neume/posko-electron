@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/neume/posko-electron#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "electron": "^3.0.2"
   }
 }

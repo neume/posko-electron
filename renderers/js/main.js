@@ -1,14 +1,20 @@
-
+const jQuery = require('jquery')
 const {ipcRenderer} = require('electron')
 
-credentials = {
-  account_name: 'first_company',
-  email: 'admin@first_company.com',
-  password: 'pass'
+window.$ = window.jQuery = require('jquery');
+
+function getDataFrom(id) {
+  return $(id).val();
 }
 
-ipcRenderer.sendSync('ping', credentials)
+$('#sign-in-form').on('submit', function(e) {
+  e.preventDefault();
 
-ipcRenderer.on('pong', (event, arg) => {
-  console.log('pong')
-})
+  credentials = {
+    account_name: getDataFrom('#sign_in_form_account_name'),
+    email: getDataFrom('#sign_in_form_email'),
+    password: getDataFrom('#sign_in_form_password')
+  }
+
+  ipcRenderer.send('submitSignInForm', credentials);
+});

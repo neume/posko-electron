@@ -2,10 +2,13 @@
   "name": "posko-desktop",
   "version": "0.0.1",
   "description": "POSko on Desktop",
-  "main": "main/index.js",
+  "main": "public/electron-main.js",
   "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron-start": "concurrently \"BROWSER=none npm run start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "repository": {
     "type": "git",
@@ -21,10 +24,30 @@
   },
   "homepage": "https://github.com/neume/posko-electron#readme",
   "dependencies": {
-    "axios": "^0.18.0",
-    "electron": "^3.0.2",
-    "jquery": "^3.3.1",
+    "concurrently": "^4.1.0",
+    "electron-builder": "^20.39.0",
+    "electron-is-dev": "^1.0.1",
+    "materialize": "^1.0.0",
     "materialize-css": "^1.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-materialize": "^3.0.4",
+    "react-scripts": "2.1.8",
+    "wait-on": "^3.2.0",
+    "axios": "^0.18.0",
+    "jquery": "^3.3.1",
     "nedb": "^1.8.0"
-  }
+  },
+  "devDependencies": {
+    "electron": "^4.1.3"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

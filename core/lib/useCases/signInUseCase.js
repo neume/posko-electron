@@ -1,32 +1,16 @@
-import axios from 'axios'
-import qs from 'qs';
+import SignInRequest from '../requests/signInRequest'
 export default class SignInUseCase {
+  constructor(options = {
+    request: new SignInRequest({baseURL: 'http://localhost:3001'})
+  }) {
+    this.request = options.request
+  }
   async perform(options = {}, callback) {
-
     let { account_name, email, password } = options,
         result = false
     let user = null
-    axios.defaults.baseURL = 'http://localhost:3001'
-    await axios({
-      method: 'post',
-      url:'/api/v1/sign_in',
-      data: qs.stringify({
-        email: email,
-        password: password,
-        account_name: account_name
-      }),
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      }
-    })
-    .then(function (response) {
-      callback(response)
-      user = response.data
-    })
-    .catch(function (error) {
-      console.log(error)
-    });
 
+    user = await this.request.post(account_name, email, password, callback)
     return { result: result, user: user }
   }
 }

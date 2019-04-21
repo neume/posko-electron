@@ -10,6 +10,7 @@
     "test": "NODE_PATH=./ mocha --require babel-core/register --recursive"
   },
   "devDependencies": {
+    "axios-mock-adapter": "^1.16.0",
     "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
     "expect.js": "^0.3.1",

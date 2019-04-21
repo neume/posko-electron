@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "mocha --require babel-core/register --recursive"
+    "test": "NODE_PATH=./ mocha --require babel-core/register --recursive"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

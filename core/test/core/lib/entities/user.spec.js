@@ -1,5 +1,5 @@
 import expect from 'expect.js'
-import User from '/Users/joseph/neume/posko-electron/core/lib/entities/user.js'
+import User from 'lib/entities/user.js'
 describe('User', function() {
   describe('name', function() {
     it('have #first_name', function() {

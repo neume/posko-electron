@@ -1,14 +1,20 @@
-import axios from 'axios'
 import qs from 'qs';
+import axios from 'axios';
 
 export default class SignInRequest {
-  constructor(options = {}) {
-    this.baseURL =  options.baseURL
+  constructor(config = {}) {
+    let defaults = {
+      baseURL: "http://localhost:3001"
+    }
+
+    let merged_config = Object.assign(defaults, config)
+
+    this.baseURL = merged_config.baseURL
     axios.defaults.baseURL = this.baseURL
   }
 
-  async post(account, email, password, callback) {
-    let user = null
+  async post(account_name, email, password) {
+    let result = null
     await axios({
       method: 'post',
       url:'/api/v1/sign_in',
@@ -22,12 +28,12 @@ export default class SignInRequest {
       }
     })
     .then(function (response) {
-      callback(response)
-      user = response.data
+      result = response.data.user
     })
     .catch(function (error) {
       console.log(error)
-    });
-    return user
+    })
+
+    return result
   }
 }

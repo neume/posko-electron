@@ -9,12 +9,14 @@ export default class SignInUseCase {
 
     this.request = merged_config.request
   }
-  async perform(options = {}, callback) {
+  async perform(options = {}) {
     let { account_name, email, password } = options,
         result = false
     let user = null
 
-    user = await this.request.post(account_name, email, password, callback)
+    await this.request.post(account_name, email, password).then((value) => {
+      user = value
+    })
     return { result: result, user: user }
   }
 }

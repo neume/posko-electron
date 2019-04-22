@@ -1,5 +1,5 @@
 import expect from 'expect.js'
-import SignInRequest from 'lib/requests/signInRequest.js'
+import SignInRequest from 'lib/data/requests/signInRequest.js'
 import axios  from 'axios'
 import MockAdapter from 'axios-mock-adapter'
 

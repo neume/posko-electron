@@ -1,5 +1,5 @@
 import expect from 'expect.js'
-import SignInUseCase from 'lib/useCases/signInUseCase.js'
+import SignInUseCase from 'lib/domain/useCases/signInUseCase.js'
 class SignInRequestMock {
   async post(account_name, email, password){
     return { email: 'john@email.com' }

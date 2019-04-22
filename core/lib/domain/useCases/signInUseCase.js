@@ -1,8 +1,8 @@
-import SignInRequest from '../requests/signInRequest'
+import SignInRequest from 'lib/data/requests/signInRequest'
 export default class SignInUseCase {
   constructor( config = {}) {
     let defaults = {
-      request: new SignInRequest({baseURL: 'http://localhost:3001'})
+      request: new SignInRequest()
     }
 
     let merged_config = Object.assign(defaults, config)

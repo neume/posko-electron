@@ -22,7 +22,7 @@
   "homepage": "https://github.com/neume/posko-electron#readme",
   "dependencies": {
     "axios": "^0.18.0",
-    "electron": "^3.0.2",
+    "electron": "^13.6.6",
     "jquery": "^3.3.1",
     "materialize-css": "^1.0.0",
     "nedb": "^1.8.0"
